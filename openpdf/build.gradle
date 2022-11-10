@@ -58,6 +58,8 @@ dependencies {
 
 description = 'openpdf'
 
+//release 1.3.30 forked
+
 /*java {
     withJavadocJar()
 }*/
