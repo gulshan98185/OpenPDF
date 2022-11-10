@@ -45,7 +45,8 @@
  * If you didn't download this code from the following link, you should check if
  * you aren't using an obsolete version:
  * https://github.com/LibrePDF/OpenPDF
- */
+ *//*
+
 
 package com.lowagie.text.pdf;
 
@@ -148,7 +149,9 @@ public class PdfGraphics2D extends Graphics2D {
     
     private PdfContentByte cb;
     
-    /** Storage for BaseFont objects created. */
+    */
+/** Storage for BaseFont objects created. *//*
+
     private Map<String, BaseFont> baseFonts;
     
     private boolean disposeCalled = false;
@@ -202,17 +205,20 @@ public class PdfGraphics2D extends Graphics2D {
         setRenderingHint(HyperLinkKey.KEY_INSTANCE, HyperLinkKey.VALUE_HYPERLINKKEY_OFF);
     }
 
-    /**
+    */
+/**
      * Shortcut constructor for PDFGraphics2D.
      * @param cb the PdfContentByte
      * @param width the width
      * @param height the height
-     */
+     *//*
+
     public PdfGraphics2D(PdfContentByte cb, float width, float height) {
         this(cb, width, height, null, false, false, 0);
     }
 
-    /**
+    */
+/**
      * Constructor for PDFGraphics2D.
      * @param cb                    The PdfContentByte
      * @param width                 The width
@@ -221,7 +227,8 @@ public class PdfGraphics2D extends Graphics2D {
      * @param onlyShapes            True if there are only shapes, false otherwise
      * @param convertImagesToJPEG   True to convert to JPEG, false otherwise
      * @param quality               The JPEG quality
-     */
+     *//*
+
     public PdfGraphics2D(PdfContentByte cb, float width, float height, FontMapper fontMapper, boolean onlyShapes, boolean convertImagesToJPEG, float quality) {
         super();
         dg2.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
@@ -251,23 +258,29 @@ public class PdfGraphics2D extends Graphics2D {
         cb.saveState();
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#draw(Shape)
-     */
+     *//*
+
     public void draw(Shape s) {
         followPath(s, STROKE);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawImage(Image, AffineTransform, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, AffineTransform xform, ImageObserver obs) {
         return drawImage(img, null, xform, null, obs);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawImage(BufferedImage, BufferedImageOp, int, int)
-     */
+     *//*
+
     public void drawImage(BufferedImage img, BufferedImageOp op, int x, int y) {
         BufferedImage result = img;
         if (op != null) {
@@ -277,9 +290,11 @@ public class PdfGraphics2D extends Graphics2D {
         drawImage(result, x, y, null);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawRenderedImage(RenderedImage, AffineTransform)
-     */
+     *//*
+
     public void drawRenderedImage(RenderedImage img, AffineTransform xform) {
         BufferedImage image = null;
         if (img instanceof BufferedImage) {
@@ -304,34 +319,42 @@ public class PdfGraphics2D extends Graphics2D {
         drawImage(image, xform, null);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawRenderableImage(RenderableImage, AffineTransform)
-     */
+     *//*
+
     public void drawRenderableImage(RenderableImage img, AffineTransform xform) {
         drawRenderedImage(img.createDefaultRendering(), xform);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawString(String, int, int)
-     */
+     *//*
+
     public void drawString(String s, int x, int y) {
         drawString(s, (float)x, (float)y);
     }
     
-    /**
+    */
+/**
      * Calculates position and/or stroke thickness depending on the font size
      * @param d value to be converted
      * @param i font size
      * @return position and/or stroke thickness depending on the font size
-     */
+     *//*
+
     public static double asPoints(double d, int i) {
         return d * i / AFM_DIVISOR;
     }
-    /**
+    */
+/**
      * This routine goes through the attributes and sets the font
      * before calling the actual string drawing routine
      * @param iter  the AttributedCharacterIterator
-     */
+     *//*
+
     @SuppressWarnings("unchecked")
     protected void doAttributes(AttributedCharacterIterator iter) {
         underline = false;
@@ -376,9 +399,11 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
 
-    /**
+    */
+/**
      * @see Graphics2D#drawString(String, float, float)
-     */
+     *//*
+
     public void drawString(String s, float x, float y) {
         if (s.length() == 0) {
             return;
@@ -564,24 +589,30 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
 
-    /**
+    */
+/**
      * @see Graphics#drawString(AttributedCharacterIterator, int, int)
-     */
+     *//*
+
     public void drawString(AttributedCharacterIterator iterator, int x, int y) {
         drawString(iterator, (float)x, (float)y);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawString(AttributedCharacterIterator, float, float)
-     */
+     *//*
+
     public void drawString(AttributedCharacterIterator iter, float x, float y) {
+*/
 /*
         StringBuffer sb = new StringBuffer();
         for(char c = iter.first(); c != AttributedCharacterIterator.DONE; c = iter.next()) {
             sb.append(c);
         }
         drawString(sb.toString(),x,y);
-*/
+*//*
+
         StringBuilder stringbuffer = new StringBuilder(iter.getEndIndex());
         for(char c = iter.first(); c != '\uFFFF'; c = iter.next())
         {
@@ -603,24 +634,30 @@ public class PdfGraphics2D extends Graphics2D {
         underline = false;
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#drawGlyphVector(GlyphVector, float, float)
-     */
+     *//*
+
     public void drawGlyphVector(GlyphVector g, float x, float y) {
         Shape s = g.getOutline(x, y);
         fill(s);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#fill(Shape)
-     */
+     *//*
+
     public void fill(Shape s) {
         followPath(s, FILL);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#hit(Rectangle, Shape, boolean)
-     */
+     *//*
+
     public boolean hit(Rectangle rect, Shape s, boolean onStroke) {
         if (onStroke) {
             s = stroke.createStrokedShape(s);
@@ -632,17 +669,21 @@ public class PdfGraphics2D extends Graphics2D {
         return area.intersects(rect.x, rect.y, rect.width, rect.height);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getDeviceConfiguration()
-     */
+     *//*
+
     public GraphicsConfiguration getDeviceConfiguration() {
         return dg2.getDeviceConfiguration();
     }
     
-    /**
+    */
+/**
      * Method contributed by Alexej Suchov
      * @see Graphics2D#setComposite(Composite)
-     */
+     *//*
+
     public void setComposite(Composite comp) {
         
         if (comp instanceof AlphaComposite) {
@@ -669,10 +710,12 @@ public class PdfGraphics2D extends Graphics2D {
 
     }
     
-    /**
+    */
+/**
      * Method contributed by Alexej Suchov
      * @see Graphics2D#setPaint(Paint)
-     */
+     *//*
+
     public void setPaint(Paint paint) {
         if (paint == null)
             return;
@@ -774,20 +817,24 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#setStroke(Stroke)
-     */
+     *//*
+
     public void setStroke(Stroke s) {
         originalStroke = s;
         this.stroke = transformStroke(s);
     }
     
     
-    /**
+    */
+/**
      * Sets a rendering hint
      * @param arg0 the Key
      * @param arg1 the Object to associate to it
-     */
+     *//*
+
     public void setRenderingHint(Key arg0, Object arg1) {
          if (arg1 != null) {
              rhints.put(arg0, arg1);
@@ -803,106 +850,134 @@ public class PdfGraphics2D extends Graphics2D {
          }
     }
     
-    /**
+    */
+/**
      * @param arg0 a key
      * @return the rendering hint
-     */
+     *//*
+
     public Object getRenderingHint(Key arg0) {
         return rhints.get(arg0);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#setRenderingHints(Map)
-     */
+     *//*
+
     public void setRenderingHints(Map hints) {
         rhints.clear();
         rhints.putAll(hints);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#addRenderingHints(Map)
-     */
+     *//*
+
     public void addRenderingHints(Map hints) {
         rhints.putAll(hints);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getRenderingHints()
-     */
+     *//*
+
     public RenderingHints getRenderingHints() {
         return rhints;
     }
     
-    /**
+    */
+/**
      * @see Graphics#translate(int, int)
-     */
+     *//*
+
     public void translate(int x, int y) {
         translate((double)x, (double)y);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#translate(double, double)
-     */
+     *//*
+
     public void translate(double tx, double ty) {
         transform.translate(tx,ty);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#rotate(double)
-     */
+     *//*
+
     public void rotate(double theta) {
         transform.rotate(theta);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#rotate(double, double, double)
-     */
+     *//*
+
     public void rotate(double theta, double x, double y) {
         transform.rotate(theta, x, y);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#scale(double, double)
-     */
+     *//*
+
     public void scale(double sx, double sy) {
         transform.scale(sx, sy);
         this.stroke = transformStroke(originalStroke);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#shear(double, double)
-     */
+     *//*
+
     public void shear(double shx, double shy) {
         transform.shear(shx, shy);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#transform(AffineTransform)
-     */
+     *//*
+
     public void transform(AffineTransform tx) {
         transform.concatenate(tx);
         this.stroke = transformStroke(originalStroke);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#setTransform(AffineTransform)
-     */
+     *//*
+
     public void setTransform(AffineTransform t) {
         transform = new AffineTransform(t);
         this.stroke = transformStroke(originalStroke);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getTransform()
-     */
+     *//*
+
     public AffineTransform getTransform() {
         return new AffineTransform(transform);
     }
     
-    /**
+    */
+/**
      * Method contributed by Alexej Suchov
      * @see Graphics2D#getPaint()
-     */
+     *//*
+
     public Paint getPaint() {
         if (realPaint != null) {
             return realPaint;
@@ -911,47 +986,59 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getComposite()
-     */
+     *//*
+
     public Composite getComposite() {
         return composite;
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#setBackground(Color)
-     */
+     *//*
+
     public void setBackground(Color color) {
         background = color;
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getBackground()
-     */
+     *//*
+
     public Color getBackground() {
         return background;
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#getStroke()
-     */
+     *//*
+
     public Stroke getStroke() {
         return originalStroke;
     }
     
     
-    /**
+    */
+/**
      * @see Graphics2D#getFontRenderContext()
-     */
+     *//*
+
     public FontRenderContext getFontRenderContext() {
         boolean antialias = RenderingHints.VALUE_TEXT_ANTIALIAS_ON.equals(getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING));
         boolean fractions = RenderingHints.VALUE_FRACTIONALMETRICS_ON.equals(getRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS));
         return new FontRenderContext(new AffineTransform(), antialias, fractions);
     }
     
-    /**
+    */
+/**
      * @see Graphics#create()
-     */
+     *//*
+
     public Graphics create() {
         PdfGraphics2D g2 = new PdfGraphics2D();
         g2.rhints.putAll( this.rhints );
@@ -996,9 +1083,11 @@ public class PdfGraphics2D extends Graphics2D {
     public PdfContentByte getContent() {
         return this.cb;
     }
-    /**
+    */
+/**
      * @see Graphics#getColor()
-     */
+     *//*
+
     public Color getColor() {
         if (paint instanceof Color) {
             return (Color)paint;
@@ -1007,38 +1096,50 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
     
-    /**
+    */
+/**
      * @see Graphics#setColor(Color)
-     */
+     *//*
+
     public void setColor(Color color) {
         setPaint(color);
     }
     
-    /**
+    */
+/**
      * @see Graphics#setPaintMode()
-     */
+     *//*
+
     public void setPaintMode() {}
     
-    /**
+    */
+/**
      * @see Graphics#setXORMode(Color)
-     */
+     *//*
+
     public void setXORMode(Color c1) {
         
     }
     
-    /**
+    */
+/**
      * @see Graphics#getFont()
-     */
+     *//*
+
     public Font getFont() {
         return font;
     }
     
-    /**
+    */
+/**
      * @see Graphics#setFont(Font)
-     */
-    /**
+     *//*
+
+    */
+/**
      * Sets the current font.
-     */
+     *//*
+
     public void setFont(Font f) {
         if (f == null)
             return;
@@ -1064,41 +1165,51 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
     
-    /**
+    */
+/**
      * @see Graphics#getFontMetrics(Font)
-     */
+     *//*
+
     public FontMetrics getFontMetrics(Font f) {
         return dg2.getFontMetrics(f);
     }
     
-    /**
+    */
+/**
      * @see Graphics#getClipBounds()
-     */
+     *//*
+
     public Rectangle getClipBounds() {
         if (clip == null)
             return null;
         return getClip().getBounds();
     }
     
-    /**
+    */
+/**
      * @see Graphics#clipRect(int, int, int, int)
-     */
+     *//*
+
     public void clipRect(int x, int y, int width, int height) {
         Rectangle2D rect = new Rectangle2D.Double(x,y,width,height);
         clip(rect);
     }
     
-    /**
+    */
+/**
      * @see Graphics#setClip(int, int, int, int)
-     */
+     *//*
+
     public void setClip(int x, int y, int width, int height) {
         Rectangle2D rect = new Rectangle2D.Double(x,y,width,height);
         setClip(rect);
     }
     
-    /**
+    */
+/**
      * @see Graphics2D#clip(Shape)
-     */
+     *//*
+
     public void clip(Shape s) {
         if (s == null) {
             setClip(null);
@@ -1112,9 +1223,11 @@ public class PdfGraphics2D extends Graphics2D {
         followPath(s, CLIP);
     }
     
-    /**
+    */
+/**
      * @see Graphics#getClip()
-     */
+     *//*
+
     public Shape getClip() {
         try {
             return transform.createInverse().createTransformedShape(clip);
@@ -1124,9 +1237,11 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
     
-    /**
+    */
+/**
      * @see Graphics#setClip(Shape)
-     */
+     *//*
+
     public void setClip(Shape s) {
         cb.restoreState();
         cb.saveState();
@@ -1144,38 +1259,48 @@ public class PdfGraphics2D extends Graphics2D {
         oldStroke = strokeOne;
     }
     
-    /**
+    */
+/**
      * @see Graphics#copyArea(int, int, int, int, int, int)
-     */
+     *//*
+
     public void copyArea(int x, int y, int width, int height, int dx, int dy) {
         
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawLine(int, int, int, int)
-     */
+     *//*
+
     public void drawLine(int x1, int y1, int x2, int y2) {
         Line2D line = new Line2D.Double(x1, y1, x2, y2);
         draw(line);
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillRect(int, int, int, int)
-     */
+     *//*
+
     public void drawRect(int x, int y, int width, int height) {
         draw(new Rectangle(x, y, width, height));
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillRect(int, int, int, int)
-     */
+     *//*
+
     public void fillRect(int x, int y, int width, int height) {
         fill(new Rectangle(x,y,width,height));
     }
     
-    /**
+    */
+/**
      * @see Graphics#clearRect(int, int, int, int)
-     */
+     *//*
+
     public void clearRect(int x, int y, int width, int height) {
         Paint temp = paint;
         setPaint(background);
@@ -1183,74 +1308,92 @@ public class PdfGraphics2D extends Graphics2D {
         setPaint(temp);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawRoundRect(int, int, int, int, int, int)
-     */
+     *//*
+
     public void drawRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight) {
         RoundRectangle2D rect = new RoundRectangle2D.Double(x,y,width,height,arcWidth, arcHeight);
         draw(rect);
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillRoundRect(int, int, int, int, int, int)
-     */
+     *//*
+
     public void fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight) {
         RoundRectangle2D rect = new RoundRectangle2D.Double(x,y,width,height,arcWidth, arcHeight);
         fill(rect);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawOval(int, int, int, int)
-     */
+     *//*
+
     public void drawOval(int x, int y, int width, int height) {
         Ellipse2D oval = new Ellipse2D.Float(x, y, width, height);
         draw(oval);
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillOval(int, int, int, int)
-     */
+     *//*
+
     public void fillOval(int x, int y, int width, int height) {
         Ellipse2D oval = new Ellipse2D.Float(x, y, width, height);
         fill(oval);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawArc(int, int, int, int, int, int)
-     */
+     *//*
+
     public void drawArc(int x, int y, int width, int height, int startAngle, int arcAngle) {
         Arc2D arc = new Arc2D.Double(x,y,width,height,startAngle, arcAngle, Arc2D.OPEN);
         draw(arc);
 
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillArc(int, int, int, int, int, int)
-     */
+     *//*
+
     public void fillArc(int x, int y, int width, int height, int startAngle, int arcAngle) {
         Arc2D arc = new Arc2D.Double(x,y,width,height,startAngle, arcAngle, Arc2D.PIE);
         fill(arc);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawPolyline(int[], int[], int)
-     */
+     *//*
+
     public void drawPolyline(int[] x, int[] y, int nPoints) {
         PolylineShape polyline = new PolylineShape(x, y, nPoints);
         draw(polyline);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawPolygon(int[], int[], int)
-     */
+     *//*
+
     public void drawPolygon(int[] xPoints, int[] yPoints, int nPoints) {
         Polygon poly = new Polygon(xPoints, yPoints, nPoints);
         draw(poly);
     }
     
-    /**
+    */
+/**
      * @see Graphics#fillPolygon(int[], int[], int)
-     */
+     *//*
+
     public void fillPolygon(int[] xPoints, int[] yPoints, int nPoints) {
         Polygon poly = new Polygon();
         for (int i = 0; i < nPoints; i++) {
@@ -1259,31 +1402,39 @@ public class PdfGraphics2D extends Graphics2D {
         fill(poly);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int x, int y, ImageObserver observer) {
         return drawImage(img, x, y, null, observer);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, int, int, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int x, int y, int width, int height, ImageObserver observer) {
         return drawImage(img, x, y, width, height, null, observer);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, Color, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int x, int y, Color bgcolor, ImageObserver observer) {
         waitForImage(img);
         return drawImage(img, x, y, img.getWidth(observer), img.getHeight(observer), bgcolor, observer);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, int, int, Color, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int x, int y, int width, int height, Color bgcolor, ImageObserver observer) {
         waitForImage(img);
         double scalex = width/(double)img.getWidth(observer);
@@ -1293,16 +1444,20 @@ public class PdfGraphics2D extends Graphics2D {
         return drawImage(img, null, tx, bgcolor, observer);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, int, int, int, int, int, int, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, ImageObserver observer) {
         return drawImage(img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, null, observer);
     }
     
-    /**
+    */
+/**
      * @see Graphics#drawImage(Image, int, int, int, int, int, int, int, int, Color, ImageObserver)
-     */
+     *//*
+
     public boolean drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, Color bgcolor, ImageObserver observer) {
         waitForImage(img);
         double dwidth = (double)dx2-dx1;
@@ -1329,9 +1484,11 @@ public class PdfGraphics2D extends Graphics2D {
         return true;
     }
     
-    /**
+    */
+/**
      * @see Graphics#dispose()
-     */
+     *//*
+
     public void dispose() {
         if (kid)
             return;
@@ -1378,10 +1535,12 @@ public class PdfGraphics2D extends Graphics2D {
     //
     //
 
-    /**
+    */
+/**
      * Enables/Disables the composite font drawer due to issues with custom font mappers that do not always default to one specific font but allow custom fonts.
      * @param compositeFontDrawerEnabled true if the composite font drawer should be used else false.
-     */
+     *//*
+
     public void setCompositeFontDrawerEnabled(boolean compositeFontDrawerEnabled) {
         isCompositeFontDrawerEnabled = compositeFontDrawerEnabled;
     }
@@ -1713,7 +1872,8 @@ public class PdfGraphics2D extends Graphics2D {
         mediaTracker.removeImage(image);
     }
 
-    /**
+    */
+/**
      * Split the given string into substrings depending on if all characters of substring can be
      * displayed with the defined font or not.
      *
@@ -1721,7 +1881,8 @@ public class PdfGraphics2D extends Graphics2D {
      *            given string
      * @return list of substrings that can be displayed by with the defined font or not.
      *
-     */
+     *//*
+
     private List<String> splitIntoSubstringsByVisibility(String s) {
         List<String> stringParts = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -1746,9 +1907,11 @@ public class PdfGraphics2D extends Graphics2D {
         private static final long serialVersionUID = 6450197945596086638L;
     }
 
-    /**
+    */
+/**
      * @since 2.0.8
-     */
+     *//*
+
     public static class HyperLinkKey extends RenderingHints.Key
     {
          public static final HyperLinkKey KEY_INSTANCE = new HyperLinkKey(9999);
@@ -1769,7 +1932,8 @@ public class PdfGraphics2D extends Graphics2D {
     }
 
 
-    /**
+    */
+/**
      * Wrapper class that helps to draw string with sun.font.CompositeFont (Windows logical
      * fonts).</br>
      * If the given font is a sun.font.CompositeFont than try to find some font (an implementation
@@ -1781,7 +1945,8 @@ public class PdfGraphics2D extends Graphics2D {
      * </br>
      * Since the <code>sun.*</code> packages are not part of the supported, public interface the
      * reflection will be used.
-     */
+     *//*
+
     private static class CompositeFontDrawer
     {
 
@@ -1843,7 +2008,8 @@ public class PdfGraphics2D extends Graphics2D {
                     GET_SLOT_FONT_METHOD != null && CAN_DYSPLAY_METHOD != null && GET_FONT_NAME_METHOD != null;
         }
 
-        /**
+        */
+/**
          * Update module of the given class to open the given
          * package to the target module if the target module
          * is opened for the current module.<br/>
@@ -1851,7 +2017,8 @@ public class PdfGraphics2D extends Graphics2D {
          * Actually (java 9-13) "permit" is default mode, but in the future java
          * releases the default mode will be "deny". It's also important to
          * add <code>--add-opens<code/> for the given package if it's need.
-         */
+         *//*
+
         private static void updateModuleToOpenPackage(Class<?> classInModule, String packageName) {
             if (classInModule == null || packageName == null) {
                 return;
@@ -1908,25 +2075,31 @@ public class PdfGraphics2D extends Graphics2D {
         }
 
         private final transient StringBuilder            sb                                = new StringBuilder();
-        /**
+        */
+/**
          * Splitted parts of the string.
-         */
+         *//*
+
         private final transient List<String>            stringParts                        = new ArrayList<>();
-        /**
+        */
+/**
          * {@link BaseFont Base fonts} that corresponds to the splitted part of the string
-         */
+         *//*
+
         private final transient List<BaseFont>          correspondingBaseFontsForParts     = new ArrayList<>();
 
         private final transient Map<String, Boolean>    fontFamilyComposite                = new HashMap<>();
 
-        /**
+        */
+/**
          * Check if the given font is a composite font.
          *
          * @param font
          *            given font
          * @return <code>true</code> if the given font is sun.font.CompositeFont. <code>False</code>
          *         otherwise.
-         */
+         *//*
+
         boolean isCompositeFont(Font font) {
             if (!isSupported() || font == null) {
                 assert false;
@@ -1949,7 +2122,8 @@ public class PdfGraphics2D extends Graphics2D {
             }
         }
 
-        /**
+        */
+/**
          * Draw text with the given font at the specified position. This method splits the string
          * into parts so that it can be displayed with a matching (font that can display all symbols
          * of this part of string) slot font.</br>
@@ -1966,12 +2140,13 @@ public class PdfGraphics2D extends Graphics2D {
          * @param y
          *            the y coordinate of the location
          * @param fontConverter
-         *            function that convert {@link java.awt.Font font} to the needed
+         *            function that convert {@link java.awtandroid.Font font} to the needed
          *            {@link com.lowagie.text.pdf.BaseFont base font}
          * @param defaultDrawingFunction
          *            default drawing function that will be used for drawing string.
          * @return width of the drawn string.
-         */
+         *//*
+
         double drawString(String s, Font compositeFont, double x, double y, Function<Font, BaseFont> fontConverter, DrawStringFunction defaultDrawingFunction) {
             String fontFamily = compositeFont.getFamily();
             if (!isSupported() || (fontFamily != null && !fontFamilyComposite.get(fontFamily))) {
@@ -1998,7 +2173,8 @@ public class PdfGraphics2D extends Graphics2D {
             }
         }
 
-		/**
+		*/
+/**
 		 * Split string into visible and not visible parts.</br>
 		 * This method split string into substring parts. For each splitted part
 		 * correspond found {@link BaseFont base font} from the slots of the composite
@@ -2011,7 +2187,8 @@ public class PdfGraphics2D extends Graphics2D {
 		 * @throws IllegalAccessException
 		 * @throws IllegalArgumentException
 		 * @throws InvocationTargetException
-		 */
+		 *//*
+
         private void splitStringIntoDisplayableParts(String s, Font compositeFont, Function<Font, BaseFont> fontConverter) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
             Object result = GET_FONT2D_METHOD.invoke(null, compositeFont);
             if (result.getClass() != COMPOSITE_FONT_CLASS) {
@@ -2077,3 +2254,4 @@ public class PdfGraphics2D extends Graphics2D {
         }
     }
 }
+*/

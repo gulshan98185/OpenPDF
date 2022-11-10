@@ -49,8 +49,8 @@
 
 package com.lowagie.text.pdf.codec.wmf;
 
-import java.awt.Color;
-import java.awt.Point;
+import java.awtandroid.Color;
+import java.awtandroid.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

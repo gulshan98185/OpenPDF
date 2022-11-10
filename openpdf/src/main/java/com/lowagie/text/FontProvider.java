@@ -47,7 +47,7 @@
 
 package com.lowagie.text;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 
 /**
  * These two methods are used by FactoryProperties (for HTMLWorker).

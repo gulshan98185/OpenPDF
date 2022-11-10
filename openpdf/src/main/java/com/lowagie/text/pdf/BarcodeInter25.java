@@ -48,10 +48,10 @@
  */
 package com.lowagie.text.pdf;
 
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.image.MemoryImageSource;
+//import java.awt.Canvas;
+import java.awtandroid.Color;
+//import java.awt.Image;
+//import java.awt.image.MemoryImageSource;
 import com.lowagie.text.error_messages.MessageLocalization;
 
 import com.lowagie.text.Element;
@@ -308,7 +308,7 @@ public class BarcodeInter25 extends Barcode{
      * @param background the color of the background
      * @return the image
      */    
-    public java.awt.Image createAwtImage(Color foreground, Color background) {
+    /*public java.awt.Image createAwtImage(Color foreground, Color background) {
         int f = foreground.getRGB();
         int g = background.getRGB();
         Canvas canvas = new Canvas();
@@ -339,5 +339,5 @@ public class BarcodeInter25 extends Barcode{
         Image img = canvas.createImage(new MemoryImageSource(fullWidth, height, pix, 0, fullWidth));
         
         return img;
-    }    
+    }  */
 }

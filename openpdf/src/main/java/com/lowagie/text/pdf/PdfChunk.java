@@ -54,7 +54,7 @@ import com.lowagie.text.Font;
 import com.lowagie.text.Image;
 import com.lowagie.text.SplitCharacter;
 import com.lowagie.text.Utilities;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

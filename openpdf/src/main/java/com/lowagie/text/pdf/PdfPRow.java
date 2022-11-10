@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;

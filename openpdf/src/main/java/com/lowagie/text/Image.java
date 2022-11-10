@@ -49,9 +49,9 @@
 
 package com.lowagie.text;
 
-import java.awt.Graphics2D;
-import java.awt.color.ICC_Profile;
-import java.awt.image.BufferedImage;
+//import java.awt.Graphics2D;
+import java.awtandroid.color.ICC_Profile;
+//import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -59,10 +59,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import com.lowagie.text.error_messages.MessageLocalization;
 
-import com.lowagie.text.ExceptionConverter;
 import com.lowagie.text.pdf.PRIndirectReference;
 import com.lowagie.text.pdf.PdfArray;
-import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfDictionary;
 import com.lowagie.text.pdf.PdfIndirectReference;
 import com.lowagie.text.pdf.PdfName;
@@ -72,7 +70,6 @@ import com.lowagie.text.pdf.PdfObject;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfStream;
 import com.lowagie.text.pdf.PdfTemplate;
-import com.lowagie.text.pdf.PdfWriter;
 import com.lowagie.text.pdf.codec.CCITTG4Encoder;
 
 
@@ -549,8 +546,8 @@ public abstract class Image extends Rectangle {
     }
 
     // images from a java.awt.Image
-
-    /**
+    /*
+    *//**
      * Gets an instance of an Image from a java.awt.Image.
      *
      * @param image
@@ -565,7 +562,8 @@ public abstract class Image extends Rectangle {
      *             on error
      * @throws IOException
      *             on error
-     */
+     *//*
+
     public static Image getInstance(java.awt.Image image, java.awt.Color color,
             boolean forceBW) throws BadElementException, IOException {
 
@@ -630,7 +628,7 @@ public abstract class Image extends Rectangle {
                         int alpha = (pixels[j] >> 24) & 0xff;
                         if (alpha == 0) {
                             transparency = new int[2];
-                            /* bugfix by M.P. Liston, ASC, was: ... ? 1: 0; */
+                            *//* bugfix by M.P. Liston, ASC, was: ... ? 1: 0; *//*
                             transparency[0] = transparency[1] = ((pixels[j] & 0x888) != 0) ? 0xff : 0;
                         }
                     }
@@ -682,7 +680,7 @@ public abstract class Image extends Rectangle {
                 boolean shades = false;
                 for (int j = 0; j < size; j++) {
                     byte alpha = smask[j] = (byte) ((pixels[j] >> 24) & 0xff);
-                    /* bugfix by Chris Nokleberg */
+                    *//* bugfix by Chris Nokleberg *//*
                     if (!shades) {
                         if (alpha != 0 && alpha != -1) {
                             shades = true;
@@ -728,7 +726,7 @@ public abstract class Image extends Rectangle {
         }
     }
 
-    /**
+    *//**
      * Gets an instance of an Image from a java.awt.Image.
      *
      * @param image
@@ -741,13 +739,13 @@ public abstract class Image extends Rectangle {
      *             on error
      * @throws IOException
      *             on error
-     */
+     *//*
     public static Image getInstance(java.awt.Image image, java.awt.Color color)
             throws BadElementException, IOException {
         return Image.getInstance(image, color, false);
     }
 
-    /**
+    *//**
      * Gets an instance of a Image from a java.awt.Image.
      * The image is added as a JPEG with a user defined quality.
      *
@@ -757,12 +755,12 @@ public abstract class Image extends Rectangle {
      * @return an object of type <CODE>PdfTemplate</CODE>
      * @throws BadElementException on error
      * @throws IOException         on error
-     */
+     *//*
     public static Image getInstance(PdfWriter writer, java.awt.Image awtImage, float quality) throws BadElementException, IOException {
         return getInstance(new PdfContentByte(writer), awtImage, quality);
     }
 
-    /**
+    *//**
      * Gets an instance of a Image from a java.awt.Image.
      * The image is added as a JPEG with a user defined quality.
      *
@@ -772,7 +770,7 @@ public abstract class Image extends Rectangle {
      * @return an object of type <CODE>PdfTemplate</CODE>
      * @throws BadElementException on error
      * @throws IOException         on error
-     */
+     *//*
     public static Image getInstance(PdfContentByte cb, java.awt.Image awtImage, float quality) throws BadElementException, IOException {
         java.awt.image.PixelGrabber pg = new java.awt.image.PixelGrabber(awtImage,
                 0, 0, -1, -1, true);
@@ -791,7 +789,7 @@ public abstract class Image extends Rectangle {
         g2d.drawImage(awtImage, 0, 0, null);
         g2d.dispose();
         return getInstance(tp);
-    }
+    }*/
 
     // image from indirect reference
 

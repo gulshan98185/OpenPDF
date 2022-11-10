@@ -51,7 +51,7 @@ package com.lowagie.text;
 
 import com.lowagie.text.html.Markup;
 import com.lowagie.text.pdf.BaseFont;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

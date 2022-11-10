@@ -1,3 +1,4 @@
+/*
 package com.lowagie.text.pdf;
 
 import com.lowagie.text.ExceptionConverter;
@@ -11,11 +12,13 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+*/
 /**
  *
  *
  * @author  Gajendra kumar (raaz2.gajendra@gmail.com)
- */
+ *//*
+
 public class TTFCache {
 
     private static Map<String,TTFFile> ttfFileMap =new ConcurrentHashMap<>();
@@ -68,3 +71,4 @@ public class TTFCache {
     }
 
 }
+*/

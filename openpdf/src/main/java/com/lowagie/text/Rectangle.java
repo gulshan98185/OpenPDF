@@ -49,7 +49,7 @@
 package com.lowagie.text;
 
 import com.lowagie.text.pdf.GrayColor;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.util.ArrayList;
 
 /**
@@ -59,7 +59,7 @@ import java.util.ArrayList;
  * {@link #setBorderWidth(float)}and {@link #setBorder(int)}. They also support
  * borders that vary in width/color on each side using methods like
  * {@link #setBorderWidthLeft(float)}or
- * {@link #setBorderColorLeft(java.awt.Color)}.
+ * {@link #setBorderColorLeft(Color)}.
  * 
  * @see Element
  * @see Table

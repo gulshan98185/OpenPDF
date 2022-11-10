@@ -49,6 +49,7 @@
 
 package com.lowagie.text.pdf;
 
+import java.awtandroid.Color;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -721,8 +722,8 @@ public class PdfAcroForm extends PdfDictionary {
         field.setFieldName(name);
         field.setFlags(PdfAnnotation.FLAGS_PRINT);
         field.setPage();
-        field.setMKBorderColor(java.awt.Color.black);
-        field.setMKBackgroundColor(java.awt.Color.white);
+        field.setMKBorderColor(Color.black);
+        field.setMKBackgroundColor(Color.white);
     }
 
     /**

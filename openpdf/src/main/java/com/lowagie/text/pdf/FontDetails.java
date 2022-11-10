@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf;
 
-import java.awt.font.GlyphVector;
+//import java.awt.font.GlyphVector;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
@@ -261,11 +261,11 @@ class FontDetails {
         return s.getBytes(CJKFont.CJK_ENCODING);
     }
 
-    byte[] convertToBytes(GlyphVector glyphVector) {
+    /*byte[] convertToBytes(GlyphVector glyphVector) {
         return convertToBytes(glyphVector, 0, glyphVector.getNumGlyphs());
-    }
+    }*/
     
-    byte[] convertToBytes(GlyphVector glyphVector, int beginIndex, int endIndex) {
+    /*byte[] convertToBytes(GlyphVector glyphVector, int beginIndex, int endIndex) {
         if (fontType != BaseFont.FONT_TYPE_TTUNI || symbolic) {
             throw new UnsupportedOperationException("Only supported for True Type Unicode fonts");
         }
@@ -298,7 +298,7 @@ class FontDetails {
         } catch (UnsupportedEncodingException e) {
             throw new ExceptionConverter(e);
         }
-    }
+    }*/
     
     
     /**

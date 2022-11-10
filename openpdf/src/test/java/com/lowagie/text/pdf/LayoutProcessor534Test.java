@@ -9,7 +9,7 @@ import com.lowagie.text.Element;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.parser.PdfTextExtractor;
-import java.awt.Font;
+import java.awtandroid.Font;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,7 +21,7 @@ class LayoutProcessor534Test {
     @BeforeAll
     static void beforeAll() {
         assumeThat(LayoutProcessor.isSet(Font.LAYOUT_RIGHT_TO_LEFT)).isFalse();
-        LayoutProcessor.enable(java.awt.Font.LAYOUT_RIGHT_TO_LEFT);
+        LayoutProcessor.enable(Font.LAYOUT_RIGHT_TO_LEFT);
     }
 
     @BeforeEach

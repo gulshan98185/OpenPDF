@@ -50,8 +50,8 @@
 
 package com.lowagie.text.pdf.codec.wmf;
 
-import java.awt.Color;
-import java.awt.Point;
+import java.awtandroid.Color;
+import java.awtandroid.Point;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

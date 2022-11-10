@@ -50,7 +50,7 @@
 
 package com.lowagie.text;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.util.Properties;
 import java.util.Set;
 

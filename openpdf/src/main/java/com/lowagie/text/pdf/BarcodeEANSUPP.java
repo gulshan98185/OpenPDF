@@ -45,8 +45,7 @@
  * https://github.com/LibrePDF/OpenPDF
  */
 package com.lowagie.text.pdf;
-import java.awt.Color;
-import com.lowagie.text.error_messages.MessageLocalization;
+import java.awtandroid.Color;
 
 import com.lowagie.text.Rectangle;
 
@@ -150,7 +149,7 @@ public class BarcodeEANSUPP extends Barcode{
      * @param background the color of the background
      * @return the image
      */    
-    public java.awt.Image createAwtImage(Color foreground, Color background) {
+    /*public java.awt.Image createAwtImage(Color foreground, Color background) {
         throw new UnsupportedOperationException(MessageLocalization.getComposedMessage("the.two.barcodes.must.be.composed.externally"));
-    }    
+    }    */
 }

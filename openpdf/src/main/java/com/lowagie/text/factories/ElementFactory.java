@@ -51,7 +51,7 @@
  */
 package com.lowagie.text.factories;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;

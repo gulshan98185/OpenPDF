@@ -47,7 +47,7 @@
 package com.lowagie.text.pdf;
 
 import com.lowagie.text.error_messages.MessageLocalization;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 /** Implements the shading dictionary (or stream).
  *

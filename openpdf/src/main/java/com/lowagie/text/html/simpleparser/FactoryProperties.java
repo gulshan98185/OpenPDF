@@ -66,7 +66,7 @@ import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.HyphenationAuto;
 import com.lowagie.text.pdf.HyphenationEvent;
 import com.lowagie.text.utils.NumberUtilities;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;

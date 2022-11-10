@@ -45,17 +45,20 @@
  * If you didn't download this code from the following link, you should check if
  * you aren't using an obsolete version:
  * https://github.com/LibrePDF/OpenPDF
- */
+ *//*
+
 
 package com.lowagie.text.pdf;
 
 import java.awt.print.PrinterGraphics;
 import java.awt.print.PrinterJob;
 
+*/
 /**
  * This is an extension class for the sole purpose of implementing the
  * {@link java.awt.print.PrinterGraphics PrinterGraphics} interface.
- */
+ *//*
+
 public class PdfPrinterGraphics2D extends PdfGraphics2D implements PrinterGraphics
 {
     private PrinterJob printerJob;
@@ -70,3 +73,4 @@ public class PdfPrinterGraphics2D extends PdfGraphics2D implements PrinterGraphi
         return printerJob;
     }
 }
+*/

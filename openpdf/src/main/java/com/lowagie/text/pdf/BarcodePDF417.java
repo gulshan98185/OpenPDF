@@ -48,9 +48,9 @@
 
 package com.lowagie.text.pdf;
 
-import java.awt.Canvas;
+/*import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.image.MemoryImageSource;
+import java.awt.image.MemoryImageSource;*/
 import java.util.ArrayList;
 
 import com.lowagie.text.error_messages.MessageLocalization;
@@ -896,7 +896,7 @@ public class BarcodePDF417 {
      * @param background the color of the background
      * @return the image
      */    
-    public java.awt.Image createAwtImage(Color foreground, Color background) {
+    /*public java.awt.Image createAwtImage(Color foreground, Color background) {
         int f = foreground.getRGB();
         int g = background.getRGB();
         Canvas canvas = new Canvas();
@@ -921,7 +921,7 @@ public class BarcodePDF417 {
         
         java.awt.Image img = canvas.createImage(new MemoryImageSource(bitColumns, codeRows * h, pix, 0, bitColumns));
         return img;
-    }
+    }*/
     
     /** Gets the raw image bits of the barcode. The image will have to
      * be scaled in the Y direction by <CODE>yHeight</CODE>.

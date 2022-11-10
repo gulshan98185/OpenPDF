@@ -52,7 +52,7 @@ package com.lowagie.text.pdf.draw;
 import com.lowagie.text.Element;
 import com.lowagie.text.pdf.PdfContentByte;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 
 /**
  * Element that draws a solid line from left to right.

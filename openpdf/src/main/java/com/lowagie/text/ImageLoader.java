@@ -45,19 +45,22 @@
 
 package com.lowagie.text;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
+//import javax.imageio.ImageIO;
+//import java.awt.image.BufferedImage;
+
+import com.lowagie.text.helper.BitmapImageDecoder;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;
 
 /**
  * Loads image files such as PNG, JPEG, GIF, TIFF and BMP.
- *
+ * <p>
  * TODO: The goal of this class is to use Java ImageIO to parse images and metadata,
  * and embed the image in the PDF in the best way (the compressed image format, not the raw pixels).
- *
- *
+ * <p>
+ * <p>
  * We don't want to maintain our own image codecs.
  *
  * @author Andreas Rosdal
@@ -71,37 +74,54 @@ public class ImageLoader {
      * @return an object of type <code>Image</code>
      */
     public static Image getPngImage(URL url) {
-        try (InputStream is = url.openStream()) {
+        /*try (InputStream is = url.openStream()) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try (InputStream is = url.openStream()) {
+            return BitmapImageDecoder.getInstance(is, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
     }
 
     public static Image getGifImage(URL url) {
-        try (InputStream is = url.openStream()) {
+        /*try (InputStream is = url.openStream()) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try (InputStream is = url.openStream()) {
+            return BitmapImageDecoder.getInstance(is, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
     }
 
     public static Image getTiffImage(URL url) {
-        try (InputStream is = url.openStream()) {
+        throw new RuntimeException("Unsupported image format: TIFF");
+        /*try (InputStream is = url.openStream()) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
-        }
+        }*/
+        //return null;
     }
 
 
     public static Image getBmpImage(URL url) {
-        try (InputStream is = url.openStream()) {
+        /*try (InputStream is = url.openStream()) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try (InputStream is = url.openStream()) {
+            return BitmapImageDecoder.getInstance(is, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
@@ -132,29 +152,44 @@ public class ImageLoader {
     }
 
     public static Image getGifImage(byte[] imageData) {
-        try (InputStream is = new ByteArrayInputStream(imageData)) {
+        /*try (InputStream is = new ByteArrayInputStream(imageData)) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try {
+            return BitmapImageDecoder.getInstance(imageData, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
     }
 
     public static Image getPngImage(byte[] imageData) {
-        try (InputStream is = new ByteArrayInputStream(imageData)) {
+        /*try (InputStream is = new ByteArrayInputStream(imageData)) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
 
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try {
+            return BitmapImageDecoder.getInstance(imageData, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
     }
 
     public static Image getBmpImage(byte[] imageData) {
-        try (InputStream is = new ByteArrayInputStream(imageData)) {
+        /*try (InputStream is = new ByteArrayInputStream(imageData)) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
 
+        } catch (Exception e) {
+            throw new ExceptionConverter(e);
+        }*/
+        try {
+            return BitmapImageDecoder.getInstance(imageData, null, false);
         } catch (Exception e) {
             throw new ExceptionConverter(e);
         }
@@ -165,26 +200,26 @@ public class ImageLoader {
      * For JRE < 9, `ImageIO.read()` requires a supporting library in the classpath to read tiffs.
      * Options are:
      * - https://github.com/jai-imageio/jai-imageio-core
-     * - https://github.com/haraldk/TwelveMonkeys 
-     *
+     * - https://github.com/haraldk/TwelveMonkeys
+     * <p>
      * see: https://openjdk.java.net/jeps/262
-     * 
+     *
      * @param imageData bytes of the tiff image
      * @return an objet of type <code>Image</code>
      */
     public static Image getTiffImage(byte[] imageData) {
-        try (InputStream is = new ByteArrayInputStream(imageData)) {
+        throw new RuntimeException("Unsupported image format: TIFF");
+        /*try (InputStream is = new ByteArrayInputStream(imageData)) {
             BufferedImage bufferedImage = ImageIO.read(is);
             return Image.getInstance(bufferedImage, null, false);
 
         } catch (Exception e) {
             throw new ExceptionConverter(e);
-        }
+        }*/
     }
 
     /**
      * Creates an Image from a JPEG image file in a byte array.
-     *
      *
      * @param imageData bytes of the image
      * @return an object of type <code>Image</code>

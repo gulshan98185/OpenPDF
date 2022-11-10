@@ -43,7 +43,8 @@
  * If you didn't download this code from the following link, you should check if
  * you aren't using an obsolete version:
  * https://github.com/LibrePDF/OpenPDF
- */
+ *//*
+
 package com.lowagie.text.pdf;
 
 import java.awt.Font;
@@ -98,3 +99,4 @@ public class AsianFontMapper extends DefaultFontMapper {
     }
 
 }
+*/

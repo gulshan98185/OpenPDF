@@ -4,29 +4,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.lowagie.text.Document;
 import com.lowagie.text.Font;
 import com.lowagie.text.FontFactory;
-import com.lowagie.text.RectangleReadOnly;
-import com.lowagie.text.pdf.DefaultFontMapper;
-import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfLiteral;
-import com.lowagie.text.pdf.PdfName;
-import com.lowagie.text.pdf.PdfWriter;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Predicate;
-import org.apache.commons.io.FileUtils;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Predicate;
 
 /**
  * {@link Font Font}-related test cases.
@@ -128,7 +117,7 @@ class FontTest {
     @Test
     @Disabled
     void testBoldSimulationAndStrokeWidth() throws Exception {
-        FileOutputStream outputStream = new FileOutputStream("target/resultSimulatedBold.pdf");
+        /*FileOutputStream outputStream = new FileOutputStream("target/resultSimulatedBold.pdf");
         Document document = new Document();
         PdfWriter writer = PdfWriter.getInstance(document, outputStream);
         // set hardcoded documentID to be able to compare the resulting document with the reference
@@ -140,7 +129,7 @@ class FontTest {
 
         // Overwrite Helvetica bold with the standard Helvetica, to force simulated bold mode
         DefaultFontMapper fontMapper = new DefaultFontMapper();
-        java.awt.Font font = new java.awt.Font("Helvetica", java.awt.Font.BOLD, 8);
+        java.awtandroid.Font font = new java.awtandroid.Font("Helvetica", java.awtandroid.Font.BOLD, 8);
         DefaultFontMapper.BaseFontParameters p = new DefaultFontMapper.BaseFontParameters("Helvetica");
         fontMapper.putName("Helvetica", p);
         Graphics2D graphics2D =
@@ -160,7 +149,7 @@ class FontTest {
 
         File original = new File(getClass().getClassLoader().getResource("SimulatedBoldAndStrokeWidth.pdf").getFile());
         File current = new File("target/resultSimulatedBold.pdf");
-        assertTrue(FileUtils.contentEquals(original, current));
+        assertTrue(FileUtils.contentEquals(original, current));*/
     }
 
 }

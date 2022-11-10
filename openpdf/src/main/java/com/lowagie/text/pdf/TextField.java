@@ -47,7 +47,7 @@
 
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

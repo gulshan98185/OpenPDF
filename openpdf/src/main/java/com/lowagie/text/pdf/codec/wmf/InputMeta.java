@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf.codec.wmf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.io.InputStream;
 

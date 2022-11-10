@@ -49,8 +49,8 @@
 
 package com.lowagie.text.pdf.internal;
 
-import java.awt.geom.AffineTransform;
-import java.awt.geom.PathIterator;
+import java.awtandroid.geom.AffineTransform;
+import java.awtandroid.geom.PathIterator;
 import java.util.NoSuchElementException;
 import com.lowagie.text.error_messages.MessageLocalization;
 /**
@@ -88,7 +88,7 @@ public class PolylineShapeIterator implements PathIterator {
      * @see #SEG_QUADTO
      * @see #SEG_CUBICTO
      * @see #SEG_CLOSE
-     * @see java.awt.geom.PathIterator#currentSegment(double[])
+     * @see PathIterator#currentSegment(double[])
      */
     public int currentSegment(double[] coords) {
         if (isDone()) {
@@ -119,7 +119,7 @@ public class PolylineShapeIterator implements PathIterator {
      * @see #SEG_QUADTO
      * @see #SEG_CUBICTO
      * @see #SEG_CLOSE
-     * @see java.awt.geom.PathIterator#currentSegment(float[])
+     * @see PathIterator#currentSegment(float[])
      */
     public int currentSegment(float[] coords) {
         if (isDone()) {
@@ -139,7 +139,7 @@ public class PolylineShapeIterator implements PathIterator {
      * path.
      * @see #WIND_EVEN_ODD
      * @see #WIND_NON_ZERO
-     * @see java.awt.geom.PathIterator#getWindingRule()
+     * @see PathIterator#getWindingRule()
      */
     public int getWindingRule() {
         return WIND_NON_ZERO;
@@ -148,7 +148,7 @@ public class PolylineShapeIterator implements PathIterator {
     /**
      * Tests if there are more points to read.
      * @return true if there are more points to read
-     * @see java.awt.geom.PathIterator#isDone()
+     * @see PathIterator#isDone()
      */
     public boolean isDone() {
         return (index >= poly.np);
@@ -158,7 +158,7 @@ public class PolylineShapeIterator implements PathIterator {
      * Moves the iterator to the next segment of the path forwards
      * along the primary direction of traversal as long as there are
      * more points in that direction.
-     * @see java.awt.geom.PathIterator#next()
+     * @see PathIterator#next()
      */
     public void next() {
         index++;

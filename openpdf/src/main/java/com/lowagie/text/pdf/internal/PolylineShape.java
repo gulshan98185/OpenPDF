@@ -49,13 +49,13 @@
 
 package com.lowagie.text.pdf.internal;
 
-import java.awt.Shape;
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.PathIterator;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import java.awtandroid.Shape;
+import java.awtandroid.Rectangle;
+import java.awtandroid.geom.AffineTransform;
+import java.awtandroid.geom.PathIterator;
+import java.awtandroid.geom.Line2D;
+import java.awtandroid.geom.Point2D;
+import java.awtandroid.geom.Rectangle2D;
 
 /**
  * Class that defines a Polyline shape.
@@ -90,7 +90,7 @@ public class PolylineShape implements Shape {
      *
      * @return a {@link Rectangle2D} that is the high-precision
      *     bounding box of this line.
-     * @see java.awt.Shape#getBounds2D()
+     * @see Shape#getBounds2D()
      */
     public Rectangle2D getBounds2D() {
         int[] r = rect();
@@ -99,7 +99,7 @@ public class PolylineShape implements Shape {
     
     /**
      * Returns the bounding box of this polyline.
-     * @see java.awt.Shape#getBounds()
+     * @see Shape#getBounds()
      */
     public Rectangle getBounds() {
         return getBounds2D().getBounds();
@@ -126,32 +126,32 @@ public class PolylineShape implements Shape {
 
     /**
      * A polyline can't contain a point.
-     * @see java.awt.Shape#contains(double, double)
+     * @see Shape#contains(double, double)
      */
     public boolean contains(double x, double y) { return false; }
     
     /**
      * A polyline can't contain a point.
-     * @see java.awt.Shape#contains(java.awt.geom.Point2D)
+     * @see Shape#contains(Point2D)
      */
     public boolean contains(Point2D p) { return false; }
     
     /**
      * A polyline can't contain a point.
-     * @see java.awt.Shape#contains(double, double, double, double)
+     * @see Shape#contains(double, double, double, double)
      */
     public boolean contains(double x, double y, double w, double h) { return false; }
     
     /**
      * A polyline can't contain a point.
-     * @see java.awt.Shape#contains(java.awt.geom.Rectangle2D)
+     * @see Shape#contains(Rectangle2D)
      */
     public boolean contains(Rectangle2D r) { return false; }
 
     /**
      * Checks if one of the lines in the polyline intersects
      * with a given rectangle.
-     * @see java.awt.Shape#intersects(double, double, double, double)
+     * @see Shape#intersects(double, double, double, double)
      */
     public boolean intersects(double x, double y, double w, double h) {
         return intersects(new Rectangle2D.Double(x, y, w, h));
@@ -160,7 +160,7 @@ public class PolylineShape implements Shape {
     /**
      * Checks if one of the lines in the polyline intersects
      * with a given rectangle.
-     * @see java.awt.Shape#intersects(java.awt.geom.Rectangle2D)
+     * @see Shape#intersects(Rectangle2D)
      */
     public boolean intersects(Rectangle2D r) {
         if(np==0)return false;
@@ -176,7 +176,7 @@ public class PolylineShape implements Shape {
      * Returns an iteration object that defines the boundary of the polyline.
      * @param at the specified {@link AffineTransform}
      * @return a {@link PathIterator} that defines the boundary of this polyline.
-     * @see java.awt.Shape#intersects(java.awt.geom.Rectangle2D)
+     * @see Shape#intersects(Rectangle2D)
      */
     public PathIterator getPathIterator(AffineTransform at) {
         return new PolylineShapeIterator(this, at);

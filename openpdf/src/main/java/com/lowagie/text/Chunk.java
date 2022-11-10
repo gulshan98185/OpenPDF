@@ -49,7 +49,7 @@
 
 package com.lowagie.text;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;

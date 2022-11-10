@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf;
 
-import static java.awt.Font.LAYOUT_RIGHT_TO_LEFT;
+import static java.awtandroid.Font.LAYOUT_RIGHT_TO_LEFT;
 
 import com.lowagie.text.Anchor;
 import com.lowagie.text.Annotation;
@@ -78,7 +78,7 @@ import com.lowagie.text.pdf.collection.PdfCollection;
 import com.lowagie.text.pdf.draw.DrawInterface;
 import com.lowagie.text.pdf.internal.PdfAnnotationsImp;
 import com.lowagie.text.pdf.internal.PdfViewerPreferencesImp;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;

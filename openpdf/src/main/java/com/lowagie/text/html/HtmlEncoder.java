@@ -51,7 +51,7 @@ package com.lowagie.text.html;
 
 import com.lowagie.text.Element;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 
 /**
  * This class converts a <CODE>String</CODE> to the HTML-format of a String.

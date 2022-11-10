@@ -45,10 +45,10 @@
  * https://github.com/LibrePDF/OpenPDF
  */
 package com.lowagie.text.pdf;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.image.MemoryImageSource;
+//import java.awt.Canvas;
+import java.awtandroid.Color;
+//import java.awt.Image;
+//import java.awt.image.MemoryImageSource;
 
 import com.lowagie.text.Rectangle;
 
@@ -184,7 +184,7 @@ public class BarcodePostnet extends Barcode{
      * @return the image
      *
      */
-    public java.awt.Image createAwtImage(Color foreground, Color background) {
+    /*public java.awt.Image createAwtImage(Color foreground, Color background) {
         int f = foreground.getRGB();
         int g = background.getRGB();
         Canvas canvas = new Canvas();
@@ -232,5 +232,5 @@ public class BarcodePostnet extends Barcode{
         Image img = canvas.createImage(new MemoryImageSource(width, barTall, pix, 0, width));
         
         return img;
-    }
+    }*/
 }

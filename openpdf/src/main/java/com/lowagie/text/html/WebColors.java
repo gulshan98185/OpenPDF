@@ -49,7 +49,7 @@
 
 package com.lowagie.text.html;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.StringTokenizer;

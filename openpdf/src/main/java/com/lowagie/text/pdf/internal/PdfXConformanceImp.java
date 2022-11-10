@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf.internal;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import com.lowagie.text.error_messages.MessageLocalization;
 
 import com.lowagie.text.pdf.BaseFont;

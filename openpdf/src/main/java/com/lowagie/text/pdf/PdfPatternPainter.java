@@ -46,7 +46,7 @@
  */
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import com.lowagie.text.error_messages.MessageLocalization;
 
 import com.lowagie.text.DocumentException;
@@ -333,7 +333,7 @@ public final class PdfPatternPainter extends PdfTemplate {
     }
     
     /**
-     * @see com.lowagie.text.pdf.PdfContentByte#setColorStroke(java.awt.Color)
+     * @see com.lowagie.text.pdf.PdfContentByte#setColorStroke(Color)
      */
     public void setColorStroke(Color color) {
         checkNoColor();
@@ -341,7 +341,7 @@ public final class PdfPatternPainter extends PdfTemplate {
     }
     
     /**
-     * @see com.lowagie.text.pdf.PdfContentByte#setColorFill(java.awt.Color)
+     * @see com.lowagie.text.pdf.PdfContentByte#setColorFill(Color)
      */
     public void setColorFill(Color color) {
         checkNoColor();
@@ -373,7 +373,7 @@ public final class PdfPatternPainter extends PdfTemplate {
     }
     
     /**
-     * @see com.lowagie.text.pdf.PdfContentByte#setPatternFill(com.lowagie.text.pdf.PdfPatternPainter, java.awt.Color, float)
+     * @see com.lowagie.text.pdf.PdfContentByte#setPatternFill(com.lowagie.text.pdf.PdfPatternPainter, Color, float)
      */
     public void setPatternFill(PdfPatternPainter p, Color color, float tint) {
         checkNoColor();
@@ -381,7 +381,7 @@ public final class PdfPatternPainter extends PdfTemplate {
     }
     
     /**
-     * @see com.lowagie.text.pdf.PdfContentByte#setPatternStroke(com.lowagie.text.pdf.PdfPatternPainter, java.awt.Color, float)
+     * @see com.lowagie.text.pdf.PdfContentByte#setPatternStroke(com.lowagie.text.pdf.PdfPatternPainter, Color, float)
      */
     public void setPatternStroke(PdfPatternPainter p, Color color, float tint) {
         checkNoColor();

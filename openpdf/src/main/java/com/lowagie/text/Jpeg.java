@@ -49,7 +49,7 @@
 
 package com.lowagie.text;
 
-import java.awt.color.ICC_Profile;
+import java.awtandroid.color.ICC_Profile;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -347,7 +347,7 @@ public class Jpeg extends Image {
                 ICC_Profile icc_prof = ICC_Profile.getInstance(ficc);
                 tagICC(icc_prof);
             }
-            catch(IllegalArgumentException e) {
+            catch(Exception e) {
                 // ignore ICC profile if it's invalid.
             }
             icc = null;

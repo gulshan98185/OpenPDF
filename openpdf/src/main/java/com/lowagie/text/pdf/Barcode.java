@@ -48,12 +48,11 @@
  */
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 
 
-import com.lowagie.text.Image;
+//import com.lowagie.text.Image;
 import com.lowagie.text.Rectangle;
-import com.lowagie.text.ExceptionConverter;
 
 /** Base class containing properties and methods common to all
  * barcode types.
@@ -422,14 +421,14 @@ public abstract class Barcode {
      * @return the <CODE>Image</CODE>
      * @see #placeBarcode(PdfContentByte cb, Color barColor, Color textColor)
      */    
-    public Image createImageWithBarcode(PdfContentByte cb, Color barColor, Color textColor) {
+    /*public Image createImageWithBarcode(PdfContentByte cb, Color barColor, Color textColor) {
         try {
             return Image.getInstance(createTemplateWithBarcode(cb, barColor, textColor));
         }
         catch (Exception e) {
             throw new ExceptionConverter(e);
         }
-    }
+    }*/
     
     /** Creates a <CODE>java.awt.Image</CODE>. This image only
      * contains the bars without any text.
@@ -437,7 +436,7 @@ public abstract class Barcode {
      * @param background the color of the background
      * @return the image
      */    
-    public abstract java.awt.Image createAwtImage(Color foreground, Color background);
+    //public abstract java.awt.Image createAwtImage(Color foreground, Color background);
     
     /** Gets the amount of ink spreading.
      * @return the ink spreading

@@ -49,7 +49,7 @@
 
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 /**
  *
  * @author  Paulo Soares (psoares@consiste.pt)

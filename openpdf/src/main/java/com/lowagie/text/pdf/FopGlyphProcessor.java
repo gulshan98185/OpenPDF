@@ -4,10 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.nio.IntBuffer;
 import java.util.Map;
 
-import org.apache.fop.complexscripts.fonts.GlyphSubstitutionTable;
+/*import org.apache.fop.complexscripts.fonts.GlyphSubstitutionTable;
 import org.apache.fop.complexscripts.util.CharScript;
 import org.apache.fop.complexscripts.util.GlyphSequence;
-import org.apache.fop.fonts.truetype.TTFFile;
+import org.apache.fop.fonts.truetype.TTFFile;*/
 
 /**
  * Utilizing Fop advanced typography capabilities for TrueType fonts.
@@ -49,7 +49,7 @@ public class FopGlyphProcessor {
         charBuffer.limit(textLength);
         glyphBuffer.limit(textLength);
 
-        GlyphSequence glyphSequence = new GlyphSequence(charBuffer, glyphBuffer, null);
+        /*GlyphSequence glyphSequence = new GlyphSequence(charBuffer, glyphBuffer, null);
         TTFFile ttf = TTFCache.getTTFFile(fileName, ttu);
         GlyphSubstitutionTable gsubTable = ttf.getGSUB();
         if (gsubTable != null) {
@@ -70,8 +70,8 @@ public class FopGlyphProcessor {
                 longTag.put(glyphCode,
                         new int[] { processedChars[i], ttu.getGlyphWidth(processedChars[i]), charBuffer.get(i) });
             }
-        }
-        return new String(charEncodedGlyphCodes).getBytes(CJKFont.CJK_ENCODING);
+        }*/
+        return new String("test").getBytes(CJKFont.CJK_ENCODING);
     }
 
 }

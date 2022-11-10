@@ -46,7 +46,7 @@
  */
 package com.lowagie.text.pdf;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.util.ArrayList;
 
 import com.lowagie.text.Chunk;

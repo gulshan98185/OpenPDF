@@ -51,9 +51,9 @@ package com.lowagie.text.pdf;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.codec.CCITTG4Encoder;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.image.MemoryImageSource;
+//import java.awt.Canvas;
+//import java.awt.Color;
+//import java.awt.image.MemoryImageSource;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.io.UnsupportedEncodingException;
@@ -770,7 +770,7 @@ public class BarcodeDatamatrix {
      * @param background the color of the background
      * @return the image
      */    
-    public java.awt.Image createAwtImage(Color foreground, Color background) {
+    /*public java.awt.Image createAwtImage(Color foreground, Color background) {
         if (image == null)
             return null;
         int f = foreground.getRGB();
@@ -792,7 +792,7 @@ public class BarcodeDatamatrix {
         }
         java.awt.Image img = canvas.createImage(new MemoryImageSource(w, h, pix, 0, w));
         return img;
-    }
+    }*/
     
     private static class DmParams {
         DmParams(int height, int width, int heightSection, int widthSection, int dataSize, int dataBlock, int errorBlock) {

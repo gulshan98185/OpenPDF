@@ -1,6 +1,6 @@
 package com.lowagie.text.html;
 
-import java.awt.Color;
+import java.awtandroid.Color;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

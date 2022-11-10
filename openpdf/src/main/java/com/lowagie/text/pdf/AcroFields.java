@@ -53,7 +53,7 @@ import com.lowagie.text.Font;
 import com.lowagie.text.Image;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.error_messages.MessageLocalization;
-import java.awt.Color;
+import java.awtandroid.Color;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
