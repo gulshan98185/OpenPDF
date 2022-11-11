@@ -5,6 +5,17 @@
 /*plugins {
     id 'com.github.librepdf.java-conventions'
 }*/
+buildscript {
+    ext.kotlin_version = '1.5.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 
 
 apply plugin: 'com.android.library'
@@ -16,7 +27,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.0-openpdf-1.3.30"
     }
     buildTypes {
         release {
@@ -53,7 +64,11 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'commons-io:commons-io:2.11.0'
 
-    api project(":awtcompat")
+    //api project(":awtcompat")
+    //compile(":awtcompat")
+    api (project(':awtcompat')) {
+        transitive = false
+    }
 }
 
 description = 'openpdf'
