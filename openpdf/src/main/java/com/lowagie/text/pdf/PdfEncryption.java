@@ -70,7 +70,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 
 /**
- * 
+ *
  * @author Paulo Soares (psoares@consiste.pt)
  * @author Kazuya Ujihara
  */
@@ -153,7 +153,7 @@ public class PdfEncryption {
     private int keyLength;
 
     private boolean encryptMetadata;
-    
+
     /**
      * Indicates if the encryption is only necessary for embedded files.
      * @since 2.1.3
@@ -161,6 +161,8 @@ public class PdfEncryption {
     private boolean embeddedFilesOnly;
 
     private int cryptoMode;
+
+    public int rValueCustom; //added by gsingh
 
     public PdfEncryption() {
         try {
@@ -291,7 +293,7 @@ public class PdfEncryption {
     }
 
     /**
-     * 
+     *
      * ownerKey, documentID must be setup
      */
     private void setupGlobalEncryptionKey(byte[] documentID, byte[] userPad,
@@ -331,7 +333,7 @@ public class PdfEncryption {
     }
 
     /**
-     * 
+     *
      * mkey must be setup
      */
     // use the revision to choose the setup method
@@ -777,6 +779,9 @@ public class PdfEncryption {
         sha256.update(salt);
         sha256.update(userKey);
         byte[] k = sha256.digest();
+
+        if(rValueCustom == 5) //this check added by gsingh
+            return k;
 
         for (int round = 0, lastEByte = 0; round < 64 || lastEByte > round-32; round++) {
             int singleSequenceSize = input.length + k.length + userKey.length;

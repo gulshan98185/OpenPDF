@@ -768,6 +768,12 @@ public class PdfReader implements PdfViewerPreferences, Closeable {
         if (em != null && em.toString().equals("false"))
           cryptoMode |= PdfWriter.DO_NOT_ENCRYPT_METADATA;
         break;
+      case 5://added by gsingh
+        cryptoMode = PdfWriter.ENCRYPTION_AES_256_V3;
+        em = enc.get(PdfName.ENCRYPTMETADATA);
+        if (em != null && em.toString().equals("false"))
+          cryptoMode |= PdfWriter.DO_NOT_ENCRYPT_METADATA;
+        break;
       case 6:
         cryptoMode = PdfWriter.ENCRYPTION_AES_256_V3;
         em = enc.get(PdfName.ENCRYPTMETADATA);
@@ -863,9 +869,10 @@ public class PdfReader implements PdfViewerPreferences, Closeable {
 
     decrypt = new PdfEncryption();
     decrypt.setCryptoMode(cryptoMode, lengthValue);
+    decrypt.rValueCustom = rValue;
 
     if (filter.equals(PdfName.STANDARD)) {
-      if (rValue < 6) {
+      if (rValue < 5) {//modified by gsingh.
         // check by owner password
         decrypt.setupByOwnerPassword(documentID, password, uValue, oValue, pValue);
         if (!equalsArray(uValue, decrypt.userKey,
@@ -879,7 +886,7 @@ public class PdfReader implements PdfViewerPreferences, Closeable {
           }
         } else
           ownerPasswordUsed = true;
-      } else {
+      } else {//modified by gsingh.
         // implements Algorithm 2.A: Retrieving the file encryption key from an encrypted document in order to decrypt it (revision 6 and later) - ISO 32000-2 section 7.6.4.3.3
         s = enc.get(PdfName.UE).toString();
         strings.remove(enc.get(PdfName.UE));
@@ -919,7 +926,7 @@ public class PdfReader implements PdfViewerPreferences, Closeable {
           if (!ownerPasswordUsed) {
             // analog of step c of Algorithm 2.A for user password
             hashAlg2B = decrypt.hashAlg2B(password, Arrays.copyOfRange(uValue, 32, 40), null);
-            if (!equalsArray(hashAlg2B, uValue, 32)) 
+            if (!equalsArray(hashAlg2B, uValue, 32))
               throw new BadPasswordException(MessageLocalization.getComposedMessage("bad.user.password"));
             // step e of Algorithm 2.A
             decrypt.setupByUserPassword(documentID, password, uValue, ueValue, oValue, oeValue, pValue);
